@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RED TIDE — Classified Archive // G.M.A.</title>
+<meta name="description" content="Global Maritime Authority classified archive. Red Tide crisis records.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ SKIP LINK (ACCESSIBILITY) ============ -->
+<a href="#main" class="skip-link">Skip to archive content</a>
+
+<!-- ============ CUSTOM CURSOR (SONAR DOT) ============ -->
+<div class="sonar-cursor" id="sonarCursor" aria-hidden="true">
+  <div class="sonar-dot"></div>
+  <div class="sonar-ring"></div>
+</div>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div class="loading-screen" id="loadingScreen" role="status" aria-label="Loading archive">
+  <div class="loading-scanlines" aria-hidden="true"></div>
+  <div class="loading-noise" aria-hidden="true"></div>
+
+  <div class="loading-content">
+    <div class="loading-header">
+      <span class="loading-org">GLOBAL MARITIME AUTHORITY</span>
+      <span class="loading-sub">SECURE TERMINAL // OMEGA CLEARANCE REQUIRED</span>
+    </div>
+
+    <ul class="loading-tasks" id="loadingTasks">
+      <li data-task>Loading Archive<span class="task-status"></span></li>
+      <li data-task>Loading Ocean Satellite<span class="task-status"></span></li>
+      <li data-task>Loading Naval Database<span class="task-status"></span></li>
+      <li data-task>Loading Missing Vessel Reports<span class="task-status"></span></li>
+      <li data-task>Connecting Deep Sonar Array<span class="task-status"></span></li>
+      <li data-task>Recovering Black Box Fragments<span class="task-status"></span></li>
+      <li data-task>Loading Atlantis Investigation<span class="task-status"></span></li>
+      <li data-task>Decrypting Classified Files<span class="task-status"></span></li>
+    </ul>
+
+    <div class="loading-bar-track">
+      <div class="loading-bar-fill" id="loadingBarFill"></div>
+    </div>
+    <div class="loading-percent" id="loadingPercent">0%</div>
+
+    <div class="loading-warning" id="loadingWarning">
+      <p>WARNING: This archive contains classified material regarding the Red&nbsp;Tide&nbsp;Crisis.</p>
+      <p class="loading-proceed">Proceed?</p>
+      <button class="access-btn" id="accessBtn">ACCESS ARCHIVE</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ AMBIENT BACKGROUND ============ -->
+<canvas id="oceanCanvas" class="ocean-canvas" aria-hidden="true"></canvas>
+<div class="god-rays" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ============ NAVIGATION — CLASSIFIED DATABASE ============ -->
+<header class="site-header">
+  <a href="#hero" class="brand">
+    <span class="brand-mark">◈</span>
+    <span class="brand-text">RED TIDE</span>
+  </a>
+  <button class="db-toggle" id="dbToggle" aria-expanded="false" aria-controls="dbMenu">
+    <span class="db-toggle-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="db-toggle-label">CLASSIFIED DATABASE</span>
+  </button>
+</header>
+
+<nav class="db-menu" id="dbMenu" aria-label="Classified database navigation" data-open="false">
+  <div class="db-menu-inner">
+    <div class="db-menu-head">
+      <span class="db-menu-eyebrow">FILE INDEX</span>
+      <button class="db-close" id="dbClose" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="db-list">
+      <li><a href="#timeline"><span class="db-index">01</span>Timeline</a></li>
+      <li><a href="#archives"><span class="db-index">02</span>Archives</a></li>
+      <li><a href="#characters"><span class="db-index">03</span>Characters</a></li>
+      <li><a href="#atlantians"><span class="db-index">04</span>Atlantians</a></li>
+      <li><a href="#atlantis"><span class="db-index">05</span>Atlantis</a></li>
+      <li><a href="#world-map"><span class="db-index">06</span>World Map</a></li>
+      <li><a href="#research"><span class="db-index">07</span>Research</a></li>
+      <li><a href="#terminal"><span class="db-index">08</span>Terminal</a></li>
+      <li><a href="#developer"><span class="db-index">09</span>Developer</a></li>
+    </ul>
+    <div class="db-menu-foot">STATUS: <span class="status-live">ARCHIVE ONLINE</span></div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-particles" id="heroParticles"></div>
+    </div>
+    <p class="hero-eyebrow">CLASSIFICATION: OMEGA LEVEL &nbsp;·&nbsp; ACCESS GRANTED</p>
+    <h1 class="hero-title">RED TIDE</h1>
+    <p class="hero-tagline">Humanity searched the stars.<br>Nobody searched beneath the sea.</p>
+    <a href="#archives" class="enter-archive-btn">
+      <span>ENTER ARCHIVE</span>
+    </a>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span></span> SCROLL TO DECLASSIFY
+    </div>
+  </section>
+
+  <!-- ============ ARCHIVE — PART I ============ -->
+  <section class="archive-section" id="archives">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">PART I</span>
+      <h2>WHEN THE OCEAN TURNED RED</h2>
+      <p class="archive-meta">Authority: Global Maritime Authority (G.M.A.) &nbsp;·&nbsp; Status: Public Access Denied</p>
+    </div>
+
+    <div class="file-desktop" id="fileDesktop">
+      <div class="file-icons" id="fileIcons" data-reveal-group>
+        <button class="file-icon" data-file="day1" data-reveal="scale">
+          <span class="file-icon-glyph">📄</span>
+          <span>DAY 1<br><em>First Sighting</em></span>
+        </button>
+        <button class="file-icon" data-file="day3" data-reveal="scale">
+          <span class="file-icon-glyph">🛰</span>
+          <span>DAY 3<br><em>Satellite Confirmation</em></span>
+        </button>
+        <button class="file-icon" data-file="day13" data-reveal="scale">
+          <span class="file-icon-glyph">🚢</span>
+          <span>DAY 13<br><em>Vessel Loss</em></span>
+        </button>
+        <button class="file-icon" data-file="day27" data-reveal="scale">
+          <span class="file-icon-glyph">🎙</span>
+          <span>DAY 27<br><em>Recovered Audio</em></span>
+        </button>
+        <button class="file-icon" data-file="month2" data-reveal="scale">
+          <span class="file-icon-glyph">📡</span>
+          <span>MONTH 2<br><em>Sonar Contacts</em></span>
+        </button>
+        <button class="file-icon" data-file="atlantis-found" data-reveal="scale">
+          <span class="file-icon-glyph">🏛</span>
+          <span>MONTH 3<br><em>Atlantis Located</em></span>
+        </button>
+      </div>
+
+      <div class="file-window-layer" id="fileWindowLayer"></div>
+    </div>
+  </section>
+
+  <!-- ============ HOLOGRAM 3 — GLOBAL RED TIDE MAP (Part I placement) ============ -->
+  <section class="worldmap-hologram" data-reveal="scale">
+    <div class="hologram-head">
+      <span>HOLOGRAM // <strong>GLOBAL OCEAN STATUS</strong> — DAY 5</span>
+      <span>SIGNAL: SYNCHRONIZED</span>
+    </div>
+    <div class="hologram-canvas-wrap" id="worldmapHologram">
+      <canvas></canvas>
+    </div>
+  </section>
+
+  <!-- ============ ARCHIVE — PART II ============ -->
+  <section class="archive-section" id="part-ii">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">PART II</span>
+      <h2>FIRST CONTACT</h2>
+      <p class="archive-meta">Incident 044-A &nbsp;·&nbsp; Research Vessel ORION &nbsp;·&nbsp; North Atlantic Ocean</p>
+    </div>
+    <div class="file-icons" data-reveal-group>
+      <button class="file-icon" data-file="orion_capture" data-reveal="scale">
+        <span class="file-icon-glyph">🌊</span>
+        <span>CAPTURE<br><em>Lone Female Sighted</em></span>
+      </button>
+      <button class="file-icon" data-file="orion_breach" data-reveal="scale">
+        <span class="file-icon-glyph">⚠</span>
+        <span>BREACH<br><em>163 Contacts</em></span>
+      </button>
+    </div>
+
+    <div class="hologram-block" data-reveal="scale">
+      <div class="hologram-head">
+        <span>HOLOGRAM // <strong>INCIDENT 044-A REPLAY</strong></span>
+        <button class="hologram-replay" id="shipReplay">REPLAY</button>
+      </div>
+      <div class="hologram-canvas-wrap" id="shipHologram" tabindex="0" role="button" aria-label="Tap to replay the ORION retrieval incident">
+        <canvas></canvas>
+        <span class="hologram-counter">CONTACTS: 163</span>
+        <span class="hologram-caption">TAP THE SHIP TO REPLAY THE RETRIEVAL.</span>
+        <span class="hologram-tap-hint">TAP TO REPLAY ▸</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHIVE — PART III ============ -->
+  <section class="archive-section" id="part-iii">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">PART III</span>
+      <h2>OPERATION LEVIATHAN</h2>
+      <p class="archive-meta">Submersible A-17 &nbsp;·&nbsp; Mission Status: FAILED</p>
+    </div>
+    <div class="file-icons" data-reveal-group>
+      <button class="file-icon" data-file="leviathan_dive" data-reveal="scale">
+        <span class="file-icon-glyph">🔻</span>
+        <span>DIVE LOG<br><em>1,148 Meters</em></span>
+      </button>
+      <button class="file-icon" data-file="leviathan_loss" data-reveal="scale">
+        <span class="file-icon-glyph">📉</span>
+        <span>LOSS<br><em>No Wreckage Found</em></span>
+      </button>
+      <button class="file-icon" data-file="month7_contact" data-reveal="scale">
+        <span class="file-icon-glyph">🗣</span>
+        <span>MONTH 7<br><em>Voluntary Contact</em></span>
+      </button>
+    </div>
+
+    <div class="hologram-block" data-reveal="scale">
+      <div class="hologram-head">
+        <span>HOLOGRAM // <strong>SUBMERSIBLE A-17 REPLAY</strong></span>
+        <button class="hologram-replay" id="subReplay">RESET</button>
+      </div>
+      <div class="hologram-canvas-wrap" id="subHologram" tabindex="0" role="button" aria-label="Tap the hull to replay the encirclement">
+        <canvas></canvas>
+        <span class="hologram-counter">SONAR CONTACTS: 96 · HULL STRIKES: 0/4</span>
+        <span class="hologram-caption">TAP THE HULL 3–4 TIMES TO REPLAY THE BREACH.</span>
+        <span class="hologram-tap-hint">TAP HULL ▸</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHIVE — PART IV ============ -->
+  <section class="archive-section" id="part-iv">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">PART IV</span>
+      <h2>THE LAST ARCHIVE</h2>
+      <p class="archive-meta">Classification: OMEGA BLACK &nbsp;·&nbsp; Final Surviving Archive</p>
+    </div>
+    <div class="file-icons" data-reveal-group>
+      <button class="file-icon" data-file="atlantis_deep" data-reveal="scale">
+        <span class="file-icon-glyph">🐚</span>
+        <span>EXPEDITION 18<br><em>Living Architecture</em></span>
+      </button>
+      <button class="file-icon" data-file="great_divide" data-reveal="scale">
+        <span class="file-icon-glyph">🗿</span>
+        <span>FILE 008<br><em>The Great Divide</em></span>
+      </button>
+      <button class="file-icon" data-file="final_transmission" data-reveal="scale">
+        <span class="file-icon-glyph">📻</span>
+        <span>FINAL SIGNAL<br><em>Archive Lost</em></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="timeline-section" id="timeline">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">INDEX</span>
+      <h2>TIMELINE</h2>
+      <p class="archive-meta">Day 1 → Archive Lost</p>
+    </div>
+    <div class="timeline-track" data-reveal-group>
+      <div class="timeline-node" data-reveal="left"><time>DAY 1</time><h4>First Sighting</h4><p>Crimson water reported, Philippine Sea.</p></div>
+      <div class="timeline-node" data-reveal="left"><time>DAY 13</time><h4>First Vessel Loss</h4><p>Cargo ship vanishes without a trace.</p></div>
+      <div class="timeline-node" data-reveal="left"><time>MONTH 2</time><h4>Sonar Formation</h4><p>163 synchronized contacts detected.</p></div>
+      <div class="timeline-node" data-reveal="left"><time>MONTH 3</time><h4>Atlantis Located</h4><p>Azores expedition finds living ruins.</p></div>
+      <div class="timeline-node" data-reveal="left"><time>MONTH 3</time><h4>Incident 044-A</h4><p>ORION containment breach.</p></div>
+      <div class="timeline-node" data-reveal="left"><time>MONTH 5</time><h4>Operation Leviathan</h4><p>Submersible A-17 lost.</p></div>
+      <div class="timeline-node" data-reveal="left"><time>MONTH 7</time><h4>First Contact</h4><p>Ancient Greek confirmed as shared tongue.</p></div>
+      <div class="timeline-node" data-reveal="left"><time>MONTH 9</time><h4>Archive Lost</h4><p>Final transmission: "The sea remembers."</p></div>
+    </div>
+  </section>
+
+  <!-- ============ CHARACTERS / ATLANTIANS ============ -->
+  <section class="characters-section" id="atlantians">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">SPECIES FILE</span>
+      <h2>THE ATLANTIANS</h2>
+    </div>
+    <p class="atlantians-blurb" data-reveal>An oceanic civilization believed extinct for millennia. Armor grown from coral and whale bone. A native tongue no human throat can produce underwater — and a shared, ancient one they never forgot. Six designations are on record below. Click to declassify.</p>
+
+    <div id="characters"></div>
+    <div class="char-grid" id="charGrid" data-reveal-group></div>
+  </section>
+
+  <!-- ============ ATLANTIS ============ -->
+  <section class="atlantis-section" id="atlantis">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">FILE 008</span>
+      <h2>ATLANTIS</h2>
+      <p class="archive-meta">Not ruins. A city that never stopped growing.</p>
+    </div>
+    <div class="atlantis-stage" id="atlantisStage" data-reveal="scale">
+      <div class="atlantis-layer seaweed"></div>
+
+      <button class="atlantis-hotspot" style="left:22%; top:38%;"
+        data-lore-title="WHALE-RIB CATHEDRAL"
+        data-lore="Massive whale-rib arches rise from the seafloor, load-bearing structures grown rather than built.">🐋</button>
+
+      <button class="atlantis-hotspot" style="left:48%; top:55%;"
+        data-lore-title="CORAL HOUSES"
+        data-lore="Dwellings of living coral, still growing — no two identical, no blueprint required.">🏠</button>
+
+      <button class="atlantis-hotspot" style="left:68%; top:30%;"
+        data-lore-title="ANCIENT GREEK MONUMENT"
+        data-lore="Weathered stonework predating recorded Greek history, half-swallowed by coral growth.">🏛</button>
+
+      <button class="atlantis-hotspot" style="left:80%; top:60%;"
+        data-lore-title="SEAWEED FOREST"
+        data-lore="Bioluminescent kelp canopies serve as both district borders and nurseries.">🌿</button>
+    </div>
+    <div class="atlantis-tooltip" role="status"></div>
+  </section>
+
+  <!-- ============ WORLD MAP / INTERACTIVE GLOBE ============ -->
+  <section class="globe-section" id="world-map">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">HOLOGRAM</span>
+      <h2>INTERACTIVE GLOBE</h2>
+      <p class="archive-meta">Drag to rotate &nbsp;·&nbsp; Scroll to zoom &nbsp;·&nbsp; Click a red node to declassify</p>
+    </div>
+    <div class="globe-stage" data-reveal="scale">
+      <div id="globeMount">
+        <div class="globe-fallback" id="globeFallback">
+          <span class="globe-fallback-spin" aria-hidden="true">◈</span>
+          <p>CONNECTING TO SATELLITE UPLINK…</p>
+        </div>
+      </div>
+      <span class="globe-hint">◈ DRAG TO ROTATE · SCROLL TO ZOOM</span>
+      <div class="globe-report" id="globeReport">
+        <div class="globe-report-head">
+          <h4 id="globeReportTitle">—</h4>
+          <button class="globe-report-close" id="globeReportClose" aria-label="Close report">✕</button>
+        </div>
+        <p id="globeReportBody">—</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section class="research-section" id="research">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">FIELD DATA</span>
+      <h2>RESEARCH</h2>
+      <p class="archive-meta">Marine biology &nbsp;·&nbsp; Weaponry &nbsp;·&nbsp; Linguistics &nbsp;·&nbsp; Movement Tracking</p>
+    </div>
+    <div class="research-grid" data-reveal-group>
+      <div class="research-panel" data-reveal="scale">
+        <div class="research-panel-head">01 — HOLOGRAPHIC SCALE STRUCTURE</div>
+        <div class="research-panel-body">
+          <div class="research-canvas-wrap" id="scalesCanvas"><canvas></canvas></div>
+          <p class="research-note">Overlapping keratin-like scales, denser than any known fish species, arranged for minimal drag at depth.</p>
+        </div>
+      </div>
+
+      <div class="research-panel" data-reveal="scale">
+        <div class="research-panel-head">02 — RECOVERED WEAPON — CORAL HOOK</div>
+        <div class="research-panel-body">
+          <div class="research-canvas-wrap" id="weaponCanvas"><canvas></canvas></div>
+          <p class="research-note">Grown, not forged. Living coral hardened into a hooked blade, bound to a bone-and-shell grip.</p>
+        </div>
+      </div>
+
+      <div class="research-panel" data-reveal="scale">
+        <div class="research-panel-body artifact-panel">
+          <div class="artifact-greek">«Ἡ θάλασσα θυμᾶται ὅσα ἡ γῆ λησμονεῖ»</div>
+          <div class="artifact-translation">"The sea remembers what the land forgets."</div>
+          <span class="artifact-tag">CONFIRMED: ANCIENT GREEK, NOT MODERN</span>
+        </div>
+      </div>
+
+      <div class="research-panel" data-reveal="scale">
+        <div class="research-panel-head">04 — MOVEMENT TRACKING — "LADY OF THE LAKE"</div>
+        <div class="research-panel-body">
+          <div class="research-canvas-wrap" id="pathCanvas"><canvas></canvas></div>
+          <p class="research-note">Tracked coastal North America, a South Atlantic crossing, Antarctic waters, and the Indian / Arabian Sea. Clustered contacts remain concentrated at the poles and the northern Indian Ocean.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TERMINAL ============ -->
+  <section class="terminal-section" id="terminal">
+    <div class="archive-section-head" data-reveal>
+      <span class="archive-eyebrow">SECURE SHELL</span>
+      <h2>TERMINAL</h2>
+    </div>
+    <div class="terminal-window" data-reveal="scale">
+      <div class="terminal-titlebar">
+        <span class="terminal-dots"><span></span><span></span><span></span></span>
+        GMA-SECURE // ARCHIVE-TERM v2.4
+      </div>
+      <div class="terminal-body" id="terminalBody"></div>
+      <form class="terminal-input-row" id="terminalForm">
+        <span class="terminal-prompt">gma@archive:~$</span>
+        <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+      </form>
+    </div>
+    <p class="terminal-hint">TRY: <button type="button" data-term-cmd="help" style="color:var(--accent-bio);text-decoration:underline;">help</button> · <button type="button" data-term-cmd="entities" style="color:var(--accent-bio);text-decoration:underline;">entities</button> · <button type="button" data-term-cmd="redtide" style="color:var(--accent-bio);text-decoration:underline;">redtide</button></p>
+  </section>
+
+  <!-- ============ DEVELOPER / FOOTER ============ -->
+  <footer class="phase-note" id="developer">
+    <p>PROJECT RED TIDE — a fictional classified-archive experience.</p>
+    <p class="phase-note-sub">Built with HTML5, CSS3, vanilla JavaScript, Canvas API and Three.js. No frameworks.</p>
+  </footer>
+
+</main>
+
+<!-- Three.js (for the interactive globe only) — falls back to a second CDN if the first is blocked -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="this.onerror=null; var s=document.createElement('script'); s.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'; s.onerror=function(){window.__THREE_LOAD_FAILED=true;}; document.head.appendChild(s);"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
